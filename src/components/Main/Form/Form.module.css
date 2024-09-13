@@ -1,0 +1,78 @@
+/* Form */
+.form {
+  width: 50%;
+  padding: 20px;
+}
+.form input,
+select,
+textarea {
+  border: none;
+}
+/* Form_제목 */
+.form .title-form #title {
+  width: 100%;
+  height: 66px;
+  font-size: 3em;
+  padding: 10px;
+}
+.form .title-form #title::placeholder {
+  color: rgb(184, 184, 184);
+  font-weight: bold;
+}
+
+/* Form_정보*/
+.form .title-form .info {
+  display: flex;
+}
+.form .title-form .info div {
+  border-right: 1px solid rgb(196, 196, 196);
+}
+.form .title-form .info div:nth-of-type(3) {
+  border-right: none;
+}
+/* Form_이름 */
+.form .title-form .info .name {
+  width: 100%;
+}
+.form .title-form .info .name input {
+  width: 100%;
+  height: 25px;
+  padding: 10px;
+}
+/* Form_카테고리 */
+.form .title-form .info .category select {
+  width: 150px;
+  height: 25px;
+  color: rgb(173, 173, 173);
+}
+/* From_이미지*/
+.form .title-form .info .img input {
+  height: 25px;
+}
+
+/* Form_내용 */
+.form .detail-form textarea {
+  width: 100%;
+  height: 500px;
+  /* overflow: scroll; */
+  resize: none;
+  padding: 10px;
+  font-size: 130%;
+}
+.form .detail-form textarea::placeholder {
+  color: rgb(173, 173, 173);
+  font-style: italic;
+}
+form button {
+  padding: 15px;
+  width: 30%;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 110%;
+  background-color: rgb(37, 151, 37);
+  color: white;
+}
+form button:hover {
+  background-color: rgb(19, 100, 19);
+}

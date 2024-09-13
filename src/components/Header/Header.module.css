@@ -1,0 +1,17 @@
+.title {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  align-items: center;
+}
+.title h1 {
+  display: flex;
+  letter-spacing: 5px;
+}
+.title button {
+  padding: 2.5px 18px;
+  border-radius: 50px;
+  height: 50%;
+  font-size: 110%;
+  border: 1px solid black;
+}
