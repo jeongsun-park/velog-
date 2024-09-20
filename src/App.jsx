@@ -15,7 +15,7 @@ function App() {
         setToggle={setToggle}
         toggle={toggle}
       />
-      <Main mainText={mainText} toggle={toggle} />
+      <Main mainText={mainText} toggle={toggle} setToggle={setToggle} />
     </div>
   );
 }

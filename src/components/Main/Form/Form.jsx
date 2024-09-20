@@ -1,7 +1,7 @@
 import styles from "./Form.module.css";
-import { useRef } from "react";
+import { useState, useRef } from "react";
 
-export default function From({ setData }) {
+export default function From({ setData, setToggle }) {
   const titleRef = useRef();
   const authorRef = useRef();
   const contentRef = useRef();
@@ -30,6 +30,7 @@ export default function From({ setData }) {
       };
       // 기존데이터에서 선택한 카테고리에 맞는 배열값 가져오기
       const prevArray = prev[category];
+
       // 배열에 새로운 데이터 넣기
       const newArray = [...prevArray, newData];
       // 객체반환
@@ -41,41 +42,64 @@ export default function From({ setData }) {
       };
     });
   }
+  //모달
+  const formModalRef = useRef();
+
+  // 오픈
+  function openFormModal() {
+    formModalRef.current.showModal();
+  }
+
+  // 닫기
+  function closeFormModal() {
+    formModalRef.current.close();
+    setToggle(false);
+  }
+
   return (
-    <form onSubmit={onSubmit}>
-      <div className={styles.form}>
-        <div className={styles["title-form"]}>
-          <input
-            type="text"
-            id={styles["title"]}
-            placeholder="제목을 입력하세요"
-            ref={titleRef}
-          />
-          <div className={styles.info}>
-            <div className={styles.name}>
-              <input type="text" placeholder="이름" ref={authorRef} />
-            </div>
-            <div className={styles.category}>
-              <select name="category" ref={categoryRef}>
-                <option>카테고리</option>
-                <option value="trending">트렌딩</option>
-                <option value="latest">최신</option>
-                <option value="feed">피드</option>
-              </select>
+    <>
+      <form onSubmit={onSubmit}>
+        <div className={styles.form}>
+          <div className={styles["title-form"]}>
+            <input
+              type="text"
+              id={styles["title"]}
+              placeholder="제목을 입력하세요"
+              ref={titleRef}
+            />
+            <div className={styles.info}>
+              <div className={styles.name}>
+                <input type="text" placeholder="이름" ref={authorRef} />
+              </div>
+              <div className={styles.category}>
+                <select name="category" ref={categoryRef}>
+                  <option>카테고리</option>
+                  <option value="trending">트렌딩</option>
+                  <option value="latest">최신</option>
+                  <option value="feed">피드</option>
+                </select>
+              </div>
             </div>
             <div className={styles.img}>
               <input type="text" placeholder="사진" ref={imageRef} />
             </div>
           </div>
+          <div className={styles["detail-form"]}>
+            <textarea
+              placeholder="당신의 이야기를 적어보세요..."
+              ref={contentRef}
+            ></textarea>
+          </div>
+          <button type="submit" onClick={openFormModal}>
+            제출
+          </button>
         </div>
-        <div className={styles["detail-form"]}>
-          <textarea
-            placeholder="당신의 이야기를 적어보세요..."
-            ref={contentRef}
-          ></textarea>
-        </div>
-        <button type="submit">제출</button>
-      </div>
-    </form>
+      </form>
+
+      <dialog ref={formModalRef} className={styles.dialog}>
+        <h3>작성 완료</h3>
+        <button onClick={closeFormModal}>close</button>
+      </dialog>
+    </>
   );
 }

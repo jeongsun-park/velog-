@@ -7,6 +7,7 @@
 .title h1 {
   display: flex;
   letter-spacing: 5px;
+  padding-left: 20px;
 }
 .title button {
   padding: 2.5px 18px;

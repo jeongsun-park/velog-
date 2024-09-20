@@ -23,7 +23,9 @@ textarea {
 /* Form_정보*/
 .form .title-form .info {
   display: flex;
+  width: 100%;
 }
+
 .form .title-form .info div {
   border-right: 1px solid rgb(196, 196, 196);
 }
@@ -32,7 +34,7 @@ textarea {
 }
 /* Form_이름 */
 .form .title-form .info .name {
-  width: 100%;
+  width: 50%;
 }
 .form .title-form .info .name input {
   width: 100%;
@@ -40,14 +42,20 @@ textarea {
   padding: 10px;
 }
 /* Form_카테고리 */
+.form .title-form .info .category {
+  width: 50%;
+}
 .form .title-form .info .category select {
-  width: 150px;
+  width: 100%;
   height: 25px;
   color: rgb(173, 173, 173);
 }
 /* From_이미지*/
-.form .title-form .info .img input {
+
+.form .title-form .img input {
+  width: 100%;
   height: 25px;
+  padding: 10px;
 }
 
 /* Form_내용 */
@@ -75,4 +83,63 @@ form button {
 }
 form button:hover {
   background-color: rgb(19, 100, 19);
+}
+
+@media screen and (max-width: 1179px) {
+  .form {
+    width: 60%;
+  }
+}
+
+/* 모바일 모드 */
+@media screen and (max-width: 768px) {
+  .form {
+    width: 80%;
+  }
+  .form .title-form .info {
+    flex-direction: row;
+  }
+}
+@media screen and (max-width: 530px) {
+  .form .title-form #title {
+    font-size: 2.2em;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  /* Form_내용 */
+  .form .detail-form textarea {
+    height: 400px;
+  }
+  form button {
+    width: 100%;
+  }
+}
+
+/*모달*/
+.dialog {
+  min-width: 173px;
+  margin: 0 auto;
+  margin-top: 170px;
+  text-align: center;
+  padding: 40px;
+  border: 0;
+  border-radius: 8px;
+}
+.dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+.dialog h3 {
+  width: 100%;
+}
+.dialog button {
+  background: rgb(37, 151, 37);
+  color: white;
+  font-size: 1.1em;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
 }

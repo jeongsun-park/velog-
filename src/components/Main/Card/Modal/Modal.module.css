@@ -1,0 +1,79 @@
+.dialog {
+  margin: 0 auto;
+  margin-top: 150px;
+  max-width: 1000px;
+  padding: 20px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+.dialog button {
+  font-size: 2em;
+  padding: 2px 10px;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: black;
+}
+.dialog button:hover {
+  color: gray;
+}
+
+.dialog .conteiner {
+  padding: 30px;
+  display: flex;
+}
+
+/*반응형*/
+@media screen and (max-width: 950px) {
+  .dialog {
+    margin-top: 30px;
+    max-width: 500px;
+  }
+  .dialog .conteiner {
+    flex-direction: column;
+    width: 100%;
+    padding: 30px 0 0 0;
+  }
+  .dialog .conteiner .main_img img {
+    width: 100%;
+    height: 30%;
+    object-fit: cover;
+  }
+}
+/**/
+
+.dialog .conteiner .main_img img {
+  height: 333px;
+}
+.dialog .conteiner .content_conteiner {
+  padding: 20px;
+}
+.dialog .conteiner .content_conteiner .content_header h2 {
+  margin-bottom: 15px;
+}
+.dialog .conteiner .content_conteiner .content_header .userInfor {
+  display: flex;
+  margin-bottom: 10px;
+}
+.dialog .conteiner .content_conteiner .content_header span img {
+  width: 25px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.dialog .conteiner .content_conteiner .main_footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 68%;
+}
+.dialog .conteiner .content_conteiner .main_footer .content_footer span {
+  margin-right: 10px;
+  color: gray;
+}
