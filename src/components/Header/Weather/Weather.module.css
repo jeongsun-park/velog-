@@ -1,0 +1,17 @@
+.weather {
+  font-size: 0.9em;
+  color: gray;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.weather div {
+  margin-right: 8px;
+  font-size: 0.75em;
+}
+.weather div:nth-child(1) {
+  font-weight: bold;
+}
+.weather div:nth-child(2) span {
+  margin-right: 0;
+}

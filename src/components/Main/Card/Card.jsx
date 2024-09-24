@@ -1,5 +1,6 @@
 import styles from "./Card.module.css";
 import Modal from "./Modal/Modal";
+
 import { useRef, useState } from "react";
 
 export default function Card({

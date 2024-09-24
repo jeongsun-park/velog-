@@ -1,5 +1,6 @@
 import styles from "./Header.module.css";
 import Tab from "./Tab/Tab";
+import Weather from "./Weather/Weather";
 
 export default function Header({ setToggle, toggle, setMainText, mainText }) {
   return (
@@ -14,9 +15,12 @@ export default function Header({ setToggle, toggle, setMainText, mainText }) {
           {toggle ? "돌아가기 " : "새 글 작성"}
         </button>
       </div>
-      {toggle ? undefined : (
-        <Tab setMainText={setMainText} mainText={mainText} />
-      )}
+      <div className={styles.title2}>
+        {toggle ? undefined : (
+          <Tab setMainText={setMainText} mainText={mainText} />
+        )}
+        {toggle ? undefined : <Weather />}
+      </div>
     </>
   );
 }

@@ -1,7 +1,7 @@
 ul {
   display: flex;
   list-style: none;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 .textLi {
   padding: 10px 10px;
@@ -16,4 +16,12 @@ ul {
   color: black;
   border-bottom: 1px solid black;
   font-weight: bold;
+}
+
+@media screen and (max-width: 500px) {
+  .textLi {
+    padding: 5px 5px;
+    margin: 0 2px;
+    font-size: 0.8em;
+  }
 }
